@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form, Button, InputGroup } from 'react-bootstrap';
 
 function Deposit() {
   const [value, setValue] = useState(0);
@@ -17,17 +16,15 @@ function Deposit() {
 
   return (
     <section className="row">
-      <Form className="mb-3 d-grid gap-2" onSubmit={increment}>
-        <Form.Label>Insättning:</Form.Label>
-        <InputGroup className="mb-3">
-          <Form.Control
-            type="number"
-            value={value}
-            onChange={({ target }) => setValue(target.valueAsNumber)}
-          />
-          <Button variant="primary">Spara</Button>
-        </InputGroup>
-      </Form>
+      <form className="mb-3 d-grid gap-2" onSubmit={increment}>
+        <label>Insättning:</label>
+        <input
+          type="number"
+          value={value}
+          onChange={({ target }) => setValue(target.valueAsNumber)}
+        />
+        <button>Spara</button>
+      </form>
     </section>
   );
 }

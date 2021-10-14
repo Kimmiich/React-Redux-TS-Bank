@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form, Button, InputGroup } from 'react-bootstrap';
 
 function Withdrawal() {
   const [value, setValue] = useState(0);
@@ -17,17 +16,16 @@ function Withdrawal() {
 
   return (
     <section className="row">
-      <Form className="mb-3 d-grid gap-2" onSubmit={decrement}>
-        <Form.Label>Uttag:</Form.Label>
-        <InputGroup className="mb-3">
-          <Form.Control
-            type="number"
-            value={value}
-            onChange={({ target }) => setValue(target.valueAsNumber)}
-          />
-          <Button variant="primary">Spara</Button>
-        </InputGroup>
-      </Form>
+      <form className="mb-3 d-grid gap-2" onSubmit={decrement}>
+        <label>Uttag:</label>
+
+        <input
+          type="number"
+          value={value}
+          onChange={({ target }) => setValue(target.valueAsNumber)}
+        />
+        <button>Spara</button>
+      </form>
     </section>
   );
 }
