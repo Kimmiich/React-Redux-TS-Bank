@@ -23,7 +23,7 @@ function Deposit() {
           value={value}
           onChange={({ target }) => setValue(target.valueAsNumber)}
         />
-        <button>Spara</button>
+        <button className="rounded">Spara</button>
       </form>
     </section>
   );
